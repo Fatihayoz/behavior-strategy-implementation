@@ -11,8 +11,9 @@ const concatenateAsStrings = (arr = []) => {
     throw new TypeError('arr is not an array');
   }
 
-  let concatenated = _;
-  for (const _ of _) {
+  let concatenated = [];
+  for (const item of arr) {
+    concatenated += item;
   }
 
   return concatenated;

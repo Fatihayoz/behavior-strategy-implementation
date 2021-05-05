@@ -11,11 +11,16 @@ const containsNoNumbers = (arr = []) => {
     throw new TypeError('arr is not an array');
   }
 
-  let noNumbers = _;
-  for (const _ of _) {
+  // let noNumbers = ''; ???
+  for (const items of arr) {
+    if(isNaN(items)) {
+      return false;       
+    } else {
+      return true;
+    }
   }
 
-  return noNumbers;
+  // return noNumbers; ????
 };
 
 describe('containsNoNumbers checks if an array contains no numbers', () => {
