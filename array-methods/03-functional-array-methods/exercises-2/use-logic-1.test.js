@@ -17,8 +17,11 @@ const numberyNumberify = arr => {
   };
 
   // fill in the array methods and which logic to use
-  const allValidNumbers = arr._(_)._(_);
-
+  const allValidNumbers = arr.map(castToNumber).filter(isNotNaN);   
+  /*
+  arr.map(castToNumber) returns numbers and numberies as a number, the others as NaN.
+  .filter(isNotNaN) returns an array that contains the values that are not NaN.
+  */
   return allValidNumbers;
 };
 
