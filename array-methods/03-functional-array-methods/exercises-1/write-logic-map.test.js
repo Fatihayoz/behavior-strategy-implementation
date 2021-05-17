@@ -5,8 +5,13 @@
  * @param {string} str - the string to reverse
  * @returns {string} the string, reversed
  */
+<<<<<<< HEAD
 const reverseString = str => {
   return str.split('').reverse().join('');
+=======
+const reverseString = (str) => {
+  return _;
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448
 };
 
 describe('reverseString: reverses a string', () => {

@@ -4,42 +4,42 @@ describe('ES6 object literal shorthand', () => {
   describe('types of tasty treats', () => {
     const wet = 'soup';
     const dry = 'bread';
-    const obj = { _, _ };
+    const obj = { wet, dry };
     it('obj.dry', () => {
-      expect(obj.dry).toEqual(_);
+      expect(obj.dry).toEqual('bread');
     });
     it('obj.wet', () => {
-      expect(obj._).toEqual('soup');
+      expect(obj.wet).toEqual('soup');
     });
   });
   describe('ES5, ES6', () => {
     const tall = 'tree';
     const obj = {
-      _,
-      _: 'bush',
+      tall,
+      short: 'bush',
     };
     it('obj.short', () => {
-      expect(obj.short).toEqual(_);
+      expect(obj.short).toEqual('bush');
     });
     it('obj.tall', () => {
-      expect(_).toEqual('tree');
+      expect(obj.tall).toEqual('tree');
     });
   });
   describe('a menagerie', () => {
-    const swimming = _;
+    const swimming = 'mackerel';
     const obj = {
-      flying: _,
-      _,
-      _: 'cheetah',
+      flying: 'crane',
+      swimming,
+      running: 'cheetah',
     };
     it('obj.flying', () => {
-      expect(_).toEqual('crane');
+      expect(obj.flying).toEqual('crane');
     });
     it('obj.running', () => {
-      expect(obj.running).toEqual(_);
+      expect(obj.running).toEqual('cheetah');
     });
     it('obj.swimming', () => {
-      expect(_).toEqual('mackerel');
+      expect(obj.swimming).toEqual('mackerel');
     });
   });
 });

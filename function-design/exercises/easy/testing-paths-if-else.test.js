@@ -6,7 +6,13 @@
  * @param {any} value
  * @returns {boolean}
  */
-const stub = () => {};
+const stub = (value) => {
+  if (value) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 /*
 
@@ -14,7 +20,7 @@ const stub = () => {};
 
 for (const solution of [
   secretSolution,
-  // stub,
+  stub,
 ]) {
   /* Execution Paths
       when testing conditionals, you need to be test all paths
@@ -23,33 +29,34 @@ for (const solution of [
     // the if path
     describe('solution can identify truthy values', () => {
       it('strings', () => {
-        const actual = solution(_);
+        const actual = solution(true);
         expect(actual).toEqual(true);
       });
       it('numbers', () => {
-        const actual = _;
+        const actual = solution(1);
         expect(actual).toEqual(true);
       });
       it('booleans', () => {
-        expect(solution(_)).toEqual(true);
+        expect(solution(true)).toEqual(true);
       });
     });
     // the else path
     describe('solution can identify falsy values', () => {
       it('strings', () => {
-        _;
+        expect(solution()).toEqual(false);
       });
       it('numbers', () => {
-        _;
+        const actual = solution(0);
+        expect(actual).toEqual(false);
       });
       it('booleans', () => {
-        _;
+        expect(solution(false)).toEqual(false);
       });
       it('undefined', () => {
-        _;
+        expect(solution(undefined)).toEqual(false);
       });
       it('null', () => {
-        _;
+        expect(solution(null)).toEqual(false);
       });
     });
   });

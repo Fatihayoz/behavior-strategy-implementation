@@ -10,7 +10,7 @@
 
 const userInput = prompt('enter something or nothing');
 
-const didInputSomething = !!userInput;
+const didInputSomething = Boolean(userInput);
 
 if (didInputSomething) {
   alert('you inputted something');

@@ -25,17 +25,41 @@ describe('it should reverse strings', () => {
   });
   describe('when argument is a string', () => {
     it('empty string', () => {
-      expect(reverse('')).toEqual(_);
+      expect(reverse('')).toEqual('');
     });
     it('"toads"', () => {
-      expect(reverse(_)).toEqual('sdaot');
+      expect(reverse('toads')).toEqual('sdaot');
     });
     // write at least 5 more tests
+    it('13579', () => {
+      expect(reverse('13579')).toEqual('97531');
+    });
+    it('true', () => {
+      expect(reverse('true')).toEqual('eurt');
+    });
+    it('ANTWERPEN', () => {
+      expect(reverse('ANTWERPEN')).toEqual('NEPREWTNA');
+    });
+    it('BelGIe', () => {
+      expect(reverse('BelGIe')).toEqual('eIGleB');
+    });
+    it(':)=!<!=(:', () => {
+      expect(reverse(':)=!<!=(:')).toEqual(':(=!<!=):');
+    });
   });
   describe('when argument is not a string', () => {
     it('true', () => {
-      expect(reverse(true)).toEqual(_);
+      expect(reverse(true)).toEqual('text is not a string');
     });
     // write at least 3 more tests
+    it('true', () => {
+      expect(reverse(NaN)).toEqual('text is not a string');
+    });
+    it('true', () => {
+      expect(reverse([1,2,3])).toEqual('text is not a string');
+    });
+    it('true', () => {
+      expect(reverse(null)).toEqual('text is not a string');
+    });
   });
 });

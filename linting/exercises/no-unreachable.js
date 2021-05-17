@@ -7,8 +7,8 @@
 
 const reverseString = (toReverse = "") => {
   const reversed = toReverse.split("").reverse().join("");
-  return reversed;
   console.log(reversed);
+  return reversed;  
 };
 
 console.log(reverseString("hello"));

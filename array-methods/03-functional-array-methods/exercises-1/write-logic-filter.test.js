@@ -6,9 +6,15 @@
  * @param {string} str - the string to check
  * @returns {boolean} is the string longer than 5?
  */
+<<<<<<< HEAD
 const longerThanFive = str => str.length > 5; 
 
 
+=======
+const longerThanFive = (str) => {
+  return _;
+};
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448
 
 describe('longerThanFive: determines if a string is longer than 5 characters', () => {
   describe('can be used on its own', () => {

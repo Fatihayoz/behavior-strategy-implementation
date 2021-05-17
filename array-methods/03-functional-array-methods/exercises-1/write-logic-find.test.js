@@ -6,8 +6,13 @@
  * @param {string} str - the string
  * @returns {boolean} is it excited?
  */
+<<<<<<< HEAD
 const isExcited = str => {
   return str.includes('!');
+=======
+const isExcited = (str) => {
+  return _;
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448
 };
 
 describe('isExcited: determines if a string is excited or not', () => {

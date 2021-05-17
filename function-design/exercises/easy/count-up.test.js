@@ -6,15 +6,25 @@
  *  max must be an integer that is greater than 0
  * @returns {number[]} an array of all numbers from 0 to `max`
  */
-const stub = () => {};
+const stub = (num=0) => {
+  let arr = [];
+  for (let i = 0; i <= num; i++) {
+    arr.push(i);
+  } return arr;
+};
+
+
 
 /*
-  your strategy goes here
+  Iteration:
+  1) Create an empty array to store the result.
+  2) Iterate from zero to the given parameter.
+  Return: accumulated result. 
 */
 
 for (const solution of [
   secretSolution,
-  // stub
+  stub
 ]) {
   // the main test suite for the function
   describe(solution.name + ': counts up from 0', () => {
@@ -29,6 +39,12 @@ for (const solution of [
       expect(solution(1)).toEqual([0, 1]);
     });
     // write at least 5 more tests ...
+    it('3', () => {
+      expect(solution(1)).toEqual([0, 1, 2, 3]);
+    });
+    it('5.9', () => {
+      expect(solution(1)).toEqual([0, 1, 2, 3, 4, 5]);
+    });
   });
 }
 

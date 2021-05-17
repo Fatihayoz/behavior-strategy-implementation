@@ -6,7 +6,15 @@
  * @param {any} b - the second value
  * @returns {string} how similar are a and b?
  */
-const howSimilarAre = () => {};
+const howSimilarAre = (a, b) => {
+  if (a === b) {
+    return 'exactly the same';
+  } else if ( typeof a === typeof b) {
+    return 'the same type';
+  } else {
+    return 'nothing alike'
+  }
+};
 
 describe('determine how similar two values are', () => {
   describe('exactly the same', () => {
@@ -15,7 +23,7 @@ describe('determine how similar two values are', () => {
       const actual = howSimilarAre(1000, 1e3);
       expect(actual).toEqual(expected);
     });
-    it('NaN and NaN', () => {
+    it('NaN and NaN', () => { // NaN === NaN => false but they are the same type
       const actual = howSimilarAre(NaN, NaN);
       expect(actual).toEqual(expected);
     });

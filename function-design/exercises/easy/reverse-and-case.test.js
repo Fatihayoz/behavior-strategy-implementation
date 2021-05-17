@@ -8,7 +8,17 @@
  *  false: set the string to upper case
  * @returns {string} the reversed text in all lower or upper case
  */
-const stub = () => {};
+const stub = (text = '', lowerCase = true) => {
+  let reversed = '';
+  for (let i = text.length-1; i >= 0; i--) {
+    reversed += text[i];
+  }
+  if (lowerCase) {
+    return reversed.toLowerCase();
+  } else {
+    return reversed.toUpperCase();
+  } 
+};
 
 /*
   your strategy goes here
@@ -16,7 +26,7 @@ const stub = () => {};
 
 for (const solution of [
   secretSolution,
-  // stub
+  stub
 ]) {
   describe(
     solution.name + ': reverses a string then sets to lower or upper case',
@@ -32,22 +42,55 @@ for (const solution of [
       // write the tests indicated by the comments
       describe('when set to lower case', () => {
         // when the text is an empty string
-        it(_, () => {
-          expect(solution(_, _)).toEqual(_);
+        it('when the text is an empty string', () => {
+          expect(solution('', true)).toEqual('');
         });
         // when the text is all upper case
+        it('when the text is all upper case', () => {
+          expect(solution('ASDF', true)).toEqual('fdsa');
+        });
         // when the text is all lower case
+        it('when the text is all lower case', () => {
+          expect(solution ('asdf', true)).toEqual('fdsa');
+        });
         // when the text is mixed upper and lower case
+        it('when the text is mixed upper and lower case', () => {
+          expect(solution ('aSdF', true)).toEqual('fdsa');
+        });
         // when the text contains punctuation
+        it('when the text contains punctuation', () => {
+          expect(solution ('=aSdF!', true)).toEqual('!fdsa=');
+        });
         // when the text contains numbers
+        it('when the text contains numbers', () => {
+          expect(solution ('1=aSdF!2', true)).toEqual('2!fdsa=1');
+        });
       });
       describe('when set to upper case', () => {
         // when the text is an empty string
+        it('when the text is an empty string', () => {
+          expect(solution('', false)).toEqual('');
+        });
         // when the text is all upper case
+        it('when the text is all upper case', () => {
+          expect(solution('ASDF', false)).toEqual('FDSA');
+        });
         // when the text is all lower case
+        it('when the text is all lower case', () => {
+          expect(solution ('asdf', false)).toEqual('FDSA');
+        });        
         // when the text is mixed upper and lower case
+        it('when the text is mixed upper and lower case', () => {
+          expect(solution ('aSdF', false)).toEqual('FDSA');
+        });        
         // when the text contains punctuation
+        it('when the text contains punctuation', () => {
+          expect(solution ('=aSdF!', false)).toEqual('!FDSA=');
+        });        
         // when the text contains numbers
+        it('when the text contains numbers', () => {
+          expect(solution ('1=aSdF!2', false)).toEqual('2!FDSA=1');
+        });
       });
     }
   );

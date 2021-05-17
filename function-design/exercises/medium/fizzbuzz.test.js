@@ -10,7 +10,21 @@
  *    max must be an integer greater than or equal to 0
  *  @returns {(number|string)[]} an array of length max
  */
-const stub = () => {};
+const stub = (max= 0) => {
+  let results = [];
+  for (let i = 0; i <= max; i++) {
+    if (i % 3 === 0) {
+      results.push('fizz');
+    } 
+    if (i % 5 === 0) {
+      results.push('buzz');
+    }
+
+    if (i % 15 === 0) {
+      results.push ('fizzbuzz');
+    }
+  } return results;
+};
 
 /*  describe this solution's strategy
  */
@@ -66,7 +80,7 @@ const manySmallFunctions = max => {
 
 for (const solution of [
   secretSolution,
-  // stub,
+  stub,
   // whileLoop,
   // oneLineforLoop,
   // manySmallFunctions,

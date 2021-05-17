@@ -2,13 +2,13 @@
 
 describe('dot notation', () => {
   describe('types of tasty treats', () => {
-    const orite = _;
+    const orite = 'bread';
     const obj = {
       fav: orite,
-      _: 'soup',
+      'wet': 'soup',
     };
     it('bread', () => {
-      expect(obj._).toEqual('bread');
+      expect(obj.fav).toEqual('bread');
     });
     it('soup', () => {
       expect(obj.wet).toEqual('soup');
@@ -17,15 +17,15 @@ describe('dot notation', () => {
   describe('a menagerie', () => {
     const swimming = 'mackerel';
     const obj = {
-      flying: _,
-      _: swimming,
-      _: 'cheetah',
+      flying: 'crane',
+      swimming: 'mackerel',
+      running: 'cheetah',
     };
     it('obj.flying', () => {
-      expect(_).toEqual('crane');
+      expect(obj.flying).toEqual('crane');
     });
     it('obj.running', () => {
-      expect(obj.running).toEqual(_);
+      expect(obj.running).toEqual('cheetah');
     });
     it('obj.swimming', () => {
       expect(obj.swimming).toEqual('mackerel');

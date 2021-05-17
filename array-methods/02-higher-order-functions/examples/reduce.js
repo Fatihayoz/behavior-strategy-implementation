@@ -1,4 +1,5 @@
 'use strict';
+console.log('-- begin --');
 
 /* reducing with a callback
   you might have noticed that these loops strategies are repetitive
@@ -11,18 +12,31 @@
  * does not modify the parameter
  * @param {Array} arr - an array of items to reduce
  * @param {Function} callback - how to reduce each item
- * @param {any} [initialValue=arr[0]] - the initial value
+ * @param {any} initialValue - (optional) the initial accumulator value
  * @returns {Array} a new array with the reduceped items
  */
 const reduce = (arr, callback, initialValue) => {
-  let accumulator = initialValue;
-  for (const currentValue of arr) {
-    accumulator = callback(accumulator, currentValue);
+  let accumulator;
+  let firstIndex;
+
+  if (initialValue === undefined) {
+    accumulator = arr[0];
+    firstIndex = 1;
+  } else {
+    accumulator = initialValue;
+    firstIndex = 0;
   }
+
+  for (let i = firstIndex; i < arr.length; i++) {
+    const currentValue = arr[i];
+    accumulator = callback(accumulator, currentValue, i);
+  }
+
   return accumulator;
 };
 
-const numbersArray = [0, 1, 2, 3, 4];
+// -- sum an array of numbers --
+const numbersArray = [1, 2, 3, 4];
 
 const addNumbers = (sum, nextNumber) => {
   return sum + nextNumber;
@@ -41,15 +55,21 @@ console.assert(
   'Test 3: add numbers, with initial value'
 ); // when the intialValue argument is given, the function works and returns 15.
 
+// -- multiply an array of numbers --
 const multiplyNumbers = (product, nextNumber) => {
   return product * nextNumber;
 };
 
 const _3_expect = 24;
+<<<<<<< HEAD
 const _3_actual = reduce(numbersArray, castToNumber); 
 // castToNumber is not defined. If it is multiplyNumbers it returns NaN. Because of the intialValue argument.
+=======
+const _3_actual = reduce(numbersArray, multiplyNumbers);
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448
 console.assert(_3_actual === _3_expect, 'Test 3: multiply numbers');
 
+// -- concatenate an array of strings --
 const stringsArray = ['a', 'b', 'c'];
 
 const concatenateStrings = (fullString, nextString) => {
@@ -68,4 +88,9 @@ console.assert(
   _5_actual === _5_expect,
   'Test 5: concatenate strings, with initial value'
 );
+<<<<<<< HEAD
 // // when the intialValue argument is given, the function works and returns hi-a-b-c.
+=======
+
+console.log('-- end --');
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448

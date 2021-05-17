@@ -5,7 +5,12 @@
  * @param {string} [toReverse=''] - the string to reverse
  * @returns {string} the reversed argument
  */
-const stub = () => {};
+const stub = (toReverse='') => {
+  let reversed = '';
+  for (let i = toReverse.length-1; i >= 0; i--) {
+    reversed += toReverse [i];
+  } return reversed;
+};
 
 /*
   your strategy goes here
@@ -13,7 +18,7 @@ const stub = () => {};
 
 for (const solution of [
   secretSolution,
-  // stub
+  stub
 ]) {
   // the main test suite for the function
   describe(solution.name + ': reverses a string', () => {
@@ -27,6 +32,15 @@ for (const solution of [
       expect(solution('ASDF')).toEqual('FDSA');
     });
     // write at least 5 more tests ...
+    it ('all non-capital letters', () => {
+      expect(solution('asdf')).toEqual('fdsa');
+    });
+    it ('capital and non-capital mixed letters', () => {
+      expect(solution('AsDf')).toEqual('fDsA');
+    });
+    it('non-letter characters', () => {
+      expect(solution('!/=):')).toEqual(':)=/!');
+    });
   });
 }
 

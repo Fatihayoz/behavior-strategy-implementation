@@ -6,18 +6,18 @@
  * @param {string[]} arr - the array of strings
  * @returns {number} the sum of all numbery strings
  */
-const sumNumbery = arr => {
+const sumNumbery = (arr) => {
   // these work, you need to pass them to the right array methods
-  const isNotNaN = entry => {
+  const isNotNaN = (entry) => {
     return !Number.isNaN(entry);
   };
   const sumNumbers = (acc, next) => {
     return acc + next;
   };
-  const isString = entry => {
+  const isString = (entry) => {
     return typeof entry === 'string';
   };
-  const castToNumber = entry => {
+  const castToNumber = (entry) => {
     return Number(entry);
   };
 
@@ -27,10 +27,14 @@ const sumNumbery = arr => {
     throw new TypeError('arr is not all strings');
   }
 
+<<<<<<< HEAD
   const sumOfNumber = arr
     .map(castToNumber)
     .filter(isNotNaN)
     .reduce(sumNumbers, 0);
+=======
+  const sumOfNumber = arr._(_)._(_)._(_, _);
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448
 
   return sumOfNumber;
 };

@@ -3,26 +3,26 @@
 describe('bracket notation', () => {
   describe('types of tasty treats', () => {
     const key1 = 'dry';
-    const key2 = _;
+    const key2 = 'wet';
     const obj = {};
-    obj[key2] = _;
-    obj[_] = 'bread';
+    obj[key2] = 'soup';
+    obj[key1] = 'bread';
     it('obj.wet', () => {
       expect(obj.wet).toEqual('soup');
     });
     it('obj.dry', () => {
-      expect(obj[_]).toEqual(_);
+      expect(obj[key1]).toEqual('bread');
     });
   });
   describe('a menagerie', () => {
     const motion = 'running';
     const fastAnimal = 'cheetah';
-    const water = _;
+    const water = 'swimming';
     const obj = {
       swimming: 'mackerel',
     };
-    obj[_] = _;
-    obj['flying'] = _;
+    obj[motion] = 'cheetah';
+    obj['flying'] = 'crane';
     it('obj.flying', () => {
       expect(obj.flying).toEqual('crane');
     });

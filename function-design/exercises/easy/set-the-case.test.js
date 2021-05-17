@@ -8,7 +8,13 @@
  *  false: set the string to upper case
  * @returns {string} the text in all lower or upper case
  */
-const stub = () => {};
+const stub = (text = '', lowerCase = true) => {
+  if (lowerCase = true) {
+    return text.toLowerCase();
+  } else {
+    return text.toUpperCase();
+  }
+};
 
 /*
   your strategy goes here
@@ -16,7 +22,7 @@ const stub = () => {};
 
 for (const solution of [
   secretSolution,
-  // stub
+  stub
 ]) {
   describe(solution.name + ': sets a text to lower or upper case', () => {
     describe("the function's default parameters", () => {
@@ -30,26 +36,58 @@ for (const solution of [
     // write the tests indicated by the comments
     describe('when set to lower case', () => {
       // when the text is an empty string
-      it(_, () => {
-        expect(solution(_, _)).toEqual(_);
+      it('first parameter is to an empty string', () => {
+        expect(solution('', true)).toEqual('');
       });
       // when the text is all upper case
+      it('first parameter is all upper case', () => {
+        expect(solution('ASDF', true)).toEqual('asdf');
+      });
       // when the text is all lower case
+      it('first parameter is all lower case', () => {
+        expect(solution('asdf', true)).toEqual('asdf');
+      });      
       // when the text is mixed upper and lower case
+      it('first parameter is mixed lower and upper case', () => {
+        expect(solution('AsDf', true)).toEqual('asdf');
+      });        
       // when the text contains punctuation
+      it('first parameter contains punctuation', () => {
+        expect(solution('!AsDf=', true)).toEqual('!asdf=');
+      });           
       // when the text contains numbers
+      it('first parameter contains numbers', () => {
+        expect(solution('1AsDf2', true)).toEqual('1asdf2');
+      });       
     });
     describe('when set to upper case', () => {
       // when the text is an empty string
+      it('first parameter is to an empty string', () => {
+        expect(solution('', false)).toEqual('');
+      });      
       // when the text is all upper case
+      it('first parameter is all upper case', () => {
+        expect(solution('ASDF', false)).toEqual('ASDF');
+      });      
       // when the text is all lower case
+      it('first parameter is all lower case', () => {
+        expect(solution('asdf', false)).toEqual('ASDF');
+      });        
       // when the text is mixed upper and lower case
+      it('first parameter is mixed lower and upper case', () => {
+        expect(solution('AsDf', false)).toEqual('ASDF');      
       // when the text contains punctuation
+      it('first parameter contains punctuation', () => {
+        expect(solution('!AsDf=', false)).toEqual('!ASDF=');
+      });          
       // when the text contains numbers
+      it('first parameter contains numbers', () => {
+        expect(solution('1AsDf2', false)).toEqual('1ASDF2');
+      }); 
     });
   });
-}
+});
 
 // minified solution for testing your tests
 // prettier-ignore
-function secretSolution(a = "", b = !0) { if ("string" != typeof a) { throw new TypeError("text is not a string"); } if ("boolean" != typeof b) { throw new TypeError("lowerCase is not a boolean"); } let c = ""; return c = b ? a.toLowerCase() : a.toUpperCase(), c }
+function secretSolution (a = "", b = !0) { if ("string" != typeof a) { throw new TypeError("text is not a string"); } if ("boolean" != typeof b) { throw new TypeError("lowerCase is not a boolean"); } let c = ""; return c = b ? a.toLowerCase() : a.toUpperCase(), c }

@@ -6,7 +6,13 @@
  * @param {number} num - the number
  * @returns {boolean} is the number even?
  */
+<<<<<<< HEAD
 const isEven = num => num % 2 === 0;
+=======
+const isEven = (num) => {
+  return _;
+};
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448
 
 describe('isEven: determines if a number is even or not', () => {
   describe('can be used on its own', () => {

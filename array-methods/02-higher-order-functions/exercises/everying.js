@@ -1,4 +1,5 @@
 'use strict';
+console.log('-- begin --');
 
 // write an isFalsy function to pass the tests
 
@@ -9,10 +10,14 @@
  * @param {any} val
  * @returns {boolean}
  */
+<<<<<<< HEAD
 const isFalsy = (val) => {
   return !Boolean(val);
 };
 
+=======
+const isFalsy = (_) => {};
+>>>>>>> fa5c2f0c11cc3e8998d76c7ee6944cf3756af448
 
 // this works!  no need to change it
 const every = (arr, callback) => {
@@ -23,7 +28,6 @@ const every = (arr, callback) => {
   }
   return allAreFalsy;
 };
-
 
 // an empty array returns true
 const _1_expect = true;
@@ -49,3 +53,4 @@ const _4_actual = every(['', 0, 'hello', null, false], isFalsy);
 const _4_test = _4_actual === _4_expect;
 console.assert(_4_test, 'Test 4');
 
+console.log('-- end --');

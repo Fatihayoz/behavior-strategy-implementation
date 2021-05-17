@@ -29,13 +29,45 @@ const sortNumbers = (arrOfNumbers = []) => {
 
 describe('sortNumbers sorts an array of numbers', () => {
   // test positive numbers
-  describe('', () => {});
+  describe('', () => {
+    it ('test for positive numbers', () => {
+      const actual = sortNumbers ([3, 5, 1]);
+      const expected = [1, 3, 5];
+      expect(actual).toEqual(expected);
+    })
+  });
   // test negative numbers
-  describe('', () => {});
+  describe('', () => {
+    it ('test for negative numbers', () => {
+      const actual = sortNumbers ([-3, -5, -1]);
+      const expected = [-1, -3, -5];
+      // failed the test 
+      // copiedAndSorted.sort((a, b) => b - a) for negative numbers
+      expect(actual).toEqual(expected); 
+    })
+  });
   // test decimal numbers
-  describe('', () => {});
+  describe('', () => {
+    it ('test for decimal numbers', () => {
+      const actual = sortNumbers ([0.3, 0.5, 0.1]);
+      const expected = [0.1, 0.3, 0.5];
+      expect(actual).toEqual(expected);
+    })
+  });
   // test everything all together
-  describe('', () => {});
+  describe('', () => {
+    it ('test everything all together', () => {
+      const actual = sortNumbers ([0.3, -0.5, 1]);
+      const expected = [-0.5, 0.3, 1];
+      expect(actual).toEqual(expected);
+    })
+  });
   // test for side-effects
-  describe('', () => {});
+  describe('', () => {
+    it('it does not modify the argument array', () => {
+      const argArr = [1, 5, 3];
+      sortNumbers(argArr);
+      expect(argArr).toEqual([1, 5, 3]);
+    })
+  });
 });
