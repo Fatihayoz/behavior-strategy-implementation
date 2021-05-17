@@ -53,7 +53,11 @@ for (const solution of [
     });
     describe('when values are nothing alike', () => {
       it('obvious comparisons', () => {
+<<<<<<< HEAD
         expect(solution(null, 4)).toEqual('totally different');
+=======
+        _(_(null, 4))._(_);
+>>>>>>> 25cf9cec5fad19babc0e603874daeb9a0034098e
       });
       it('deceptive comparisons', () => {
         // "4" and 4

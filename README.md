@@ -651,6 +651,7 @@ Helpful resources for this module
 
 ### Code Quality
 
+- [JavaScript: The Better Parts](https://www.youtube.com/watch?v=_EF-FO63MXs) (first 11 minutes)
 - **Code Style**
   - [what is programming style?](https://en.wikipedia.org/wiki/Programming_style)
   - why is style important? [stackoverflow](https://stackoverflow.com/questions/127916/is-programming-style-important-how-important), [Nicholas C. Zakas](https://www.smashingmagazine.com/2012/10/why-coding-style-matters/)
@@ -971,3 +972,7 @@ Take a look at these examples/exercises, they will be helpful:
 > [Thibault](https://github.com/ThibaultLesuisse), [Evan](https://github.com/colevandersWands), [Emilien](https://github.com/EmilienD)
 
 - Week 1: [solution write-ups](https://vimeo.com/545439077), [behavior vs. strategy vs. implementation](https://vimeo.com/545440098)
+- Week 2: [about testing](https://vimeo.com/547835625), [function design](https://vimeo.com/547835556/)
+- Week 3: [code quality & code review](https://vimeo.com/551501941) By hero Thibault!
+
+

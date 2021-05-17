@@ -91,27 +91,38 @@ describe("about expect", () => {
     });
   });
 
+  // this assertion checks to make sure a function throws an error
+  //  .toThrowError is a challenge, not required for class
+  //  you can skip this example if you want to
   describe(".toThrowError", () => {
-    // this assertion checks to make sure a function throws an error
-    // you wont' need to know this unless you study /using-errors
-    it("passing", () => {
-      const throwsCorrectError = () => {
-        throw Error("hello");
+    it("should throw any error", () => {
+      const throwsAnError = () => {
+        null.someProperty;
       };
-      expect(throwsCorrectError).toThrowError(Error);
+      expect(throwsAnError).toThrowError();
     });
-    it("passing: error and message", () => {
+    it("should throw a specific error (1)", () => {
       const throwsWrongError = () => {
-        throw TypeError("userName is not a string");
+        null();
       };
       expect(throwsWrongError).toThrowError(
         TypeError,
-        "userName is not a string"
+        "null is not a function"
+      );
+    });
+    it("should throw a specific error (2)", () => {
+      const throwsWrongError = () => {
+        null();
+      };
+      expect(throwsWrongError).toThrowError(
+        new TypeError("null is not a function")
       );
     });
     it("failing: does not throw", () => {
-      const doesNotThrow = () => {};
-      expect(doesNotThrow).toThrowError(Error);
+      const doesNotThrow = () => {
+        "hello!";
+      };
+      expect(doesNotThrow).toThrowError();
     });
   });
 });
